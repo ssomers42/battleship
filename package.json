@@ -1,0 +1,23 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssomers42/battleship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssomers42/battleship/issues"
+  },
+  "homepage": "https://github.com/ssomers42/battleship#readme",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
