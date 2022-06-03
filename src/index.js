@@ -1,5 +1,3 @@
+import Gameboard from 'src/factories/Gameboard.js';
 
-
-
-
-module.exports = { Ship };
+console.log('hello');

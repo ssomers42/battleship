@@ -1,14 +1,34 @@
-const Ship = require('./Ship');
-
 const Gameboard = () => {
-  const destroyer = Ship(5, 1, 2);
+  return console.log('test');
+  /* //only need the x & y location to place ship
+  //renderShips function will handle populating the board
+  const placeShip = (ship, xLoc, yLoc) => {
+    switch (ship) {
+      case 'carrier':
+        const carrier = Ship(5, xLoc, yLoc);
+        break;
+      case 'battleShip':
+        const battleShip = Ship(4, xLoc, yLoc);
+        break;
+      case 'destroyer':
+        const destroyer = Ship(3, xLoc, yLoc);
+        break;
+      case 'submarine':
+        const submarine = Ship(3, xLoc, yLoc);
+        break;
+      case 'patrolBoat':
+        const patrolBoat = Ship(2, xLoc, yLoc);
+        break;
+    }
+  };
 
+  //determine if ship is at xLoc, yLoc by looking at DOM for
+  //rendered ships
   const receiveAttack = (xLoc, yLoc) => {
-    //determine if a ship exists at xLoc, yLoc
     //Send hit function to ship
     //Or record xLoc, yLoc of missed shot
     //Remove event listener on cell, add missed-shot class to cell
-  };
+  };*/
 };
 
-module.exports = Gameboard;
+export default Gameboard;
