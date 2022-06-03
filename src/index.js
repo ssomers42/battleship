@@ -1,3 +1,6 @@
-import Gameboard from 'src/factories/Gameboard.js';
+import { Gameboard } from './factories/Gameboard.js';
+
+let test = Gameboard();
+test.receiveAttack();
 
 console.log('hello');

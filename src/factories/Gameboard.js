@@ -1,6 +1,6 @@
 const Gameboard = () => {
-  return console.log('test');
-  /* //only need the x & y location to place ship
+  console.log('gameboard');
+  //only need the x & y location to place ship
   //renderShips function will handle populating the board
   const placeShip = (ship, xLoc, yLoc) => {
     switch (ship) {
@@ -28,7 +28,10 @@ const Gameboard = () => {
     //Send hit function to ship
     //Or record xLoc, yLoc of missed shot
     //Remove event listener on cell, add missed-shot class to cell
-  };*/
+    console.log('received');
+  };
+
+  return { placeShip, receiveAttack };
 };
 
-export default Gameboard;
+export { Gameboard };
