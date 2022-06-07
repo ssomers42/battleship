@@ -1,12 +1,9 @@
 import { Gameboard } from './factories/Gameboard.js';
 
-const renderShip = (length, xLoc, yLoc) => {
-  console.log('length');
-};
+let playerOneGameboard = Gameboard('1');
+playerOneGameboard.receiveAttack();
 
-let test = Gameboard();
-test.receiveAttack();
+let playerTwoGameboard = Gameboard('2');
+playerTwoGameboard.receiveAttack();
 
 console.log('hello');
-
-export { renderShip };

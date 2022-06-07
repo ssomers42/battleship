@@ -1,6 +1,6 @@
-import { renderShip } from '../index.js';
+import { renderShip } from '../renderApp.js';
 
-const Ship = (length, xLoc, yLoc) => {
+const Ship = (length, xLoc, yLoc, player) => {
   let hitArr = [];
 
   const hit = (index) => {
@@ -15,7 +15,7 @@ const Ship = (length, xLoc, yLoc) => {
     return hitCount === length ? true : false;
   };
 
-  renderShip(length, xLoc, yLoc);
+  renderShip(length, xLoc, yLoc, player);
 
   return { hit };
 };
