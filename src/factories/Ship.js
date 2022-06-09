@@ -1,6 +1,6 @@
 import { renderShip } from '../renderApp.js';
 
-const Ship = (length, xLoc, yLoc, player) => {
+const Ship = (length, locationArr) => {
   let hitArr = [];
 
   const hit = (index) => {
@@ -15,9 +15,9 @@ const Ship = (length, xLoc, yLoc, player) => {
     return hitCount === length ? true : false;
   };
 
-  renderShip(length, xLoc, yLoc, player);
+  renderShip(length, locationArr);
 
-  return { hit };
+  return { hit, length };
 };
 
 export default Ship;

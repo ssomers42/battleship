@@ -1,21 +1,22 @@
+import { playerOneGameboard } from './index.js';
+
 const renderGameboard = (player) => {
   const container = document.querySelector(
     `#player-${player}-gameboard .game-tiles`
   );
 
-  for (let i = 0; i < 14; i++) {
-    for (let j = 0; j < 14; j++) {
-      const tile = document.createElement('div');
-      tile.setAttribute('data-y', i);
-      tile.setAttribute('data-x', j);
-      tile.classList.add('game-tile');
-      container.append(tile);
-    }
+  for (let i = 0; i < 196; i++) {
+    const tile = document.createElement('div');
+    tile.classList.add('game-tile');
+    tile.addEventListener('click', () =>
+      playerOneGameboard.receiveAttack(dataX, dataY)
+    );
+    container.append(tile);
   }
 };
 
-const renderShip = (length, xLoc, yLoc, player) => {
-  console.log('ship rendered' + ' ' + length);
+//TODO SWAP X, Y FOR locationArr of Index
+const renderShip = (length, locationArr) => {
   const container = document.querySelector(
     `#player-${player}-gameboard .game-tiles`
   );

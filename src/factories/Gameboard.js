@@ -2,44 +2,45 @@ import Ship from './Ship.js';
 import { renderGameboard } from '../renderApp.js';
 
 const Gameboard = (player) => {
-  renderGameboard(player);
   const missedShot = [];
+  renderGameboard(player);
   //only need the x & y location to place ship
   //renderShips function will handle populating the board
-  const placeShip = (ship, xLoc, yLoc) => {
+  const placeShip = (ship, locationArr) => {
     switch (ship) {
       case 'carrier':
-        const carrier = Ship(5, xLoc, yLoc, player);
+        const carrier = Ship(5, locationArr);
         break;
       case 'battleShip':
-        const battleShip = Ship(4, xLoc, yLoc, player);
+        const battleShip = Ship(4, locationArr);
         break;
       case 'destroyer':
-        const destroyer = Ship(3, xLoc, yLoc, player);
+        const destroyer = Ship(3, locationArr);
         break;
       case 'submarine':
-        const submarine = Ship(3, xLoc, yLoc, player);
+        const submarine = Ship(3, locationArr);
         break;
       case 'patrolBoat':
-        const patrolBoat = Ship(2, xLoc, yLoc, player);
+        const patrolBoat = Ship(2, locationArr);
         break;
     }
   };
 
   //move to game control such as Player.js
-  placeShip('carrier', 1, 1, player);
-  placeShip('battleShip', 1, 2, player);
-  placeShip('destroyer', 1, 3, player);
-  placeShip('submarine', 1, 4, player);
-  placeShip('patrolBoat', 1, 5, player);
+  placeShip('carrier', [0, 1, 2, 3, 4]);
+  placeShip('battleShip', [14, 15, 16, 17]);
+  placeShip('destroyer', [28, 29, 30]);
+  placeShip('submarine', [42, 43, 44]);
+  placeShip('patrolBoat', [56, 57]);
 
   //determine if ship is at xLoc, yLoc by looking at DOM for
   //rendered ships
-  const receiveAttack = (xLoc, yLoc) => {
+  const receiveAttack = (index) => {
     //Send hit function to ship
-    //Or record xLoc, yLoc of missed shot
+    //Or record index of missed shot
     //Remove event listener on cell, add missed-shot class to cell
-    console.log('received');
+    missedShot.push(index);
+    console.log(missedShot);
   };
 
   return { placeShip, receiveAttack };

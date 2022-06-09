@@ -17,6 +17,14 @@
     border: 1px solid black;
 }
 
+.game-tile:hover {
+    background-color: rgba(0,0,0,10%);
+}
+
 .ship-tile {
-    background-color: blue;
+    background-color: #2F80ED;
+}
+
+.ship-tile:hover {
+    background-color: #1E5298;
 }
