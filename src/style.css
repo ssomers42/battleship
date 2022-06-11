@@ -17,7 +17,7 @@
     border: 1px solid black;
 }
 
-.game-tile:hover {
+.computer-tile:hover {
     background-color: rgba(0,0,0,10%);
 }
 
@@ -25,6 +25,11 @@
     background-color: #2F80ED;
 }
 
-.ship-tile:hover {
-    background-color: #1E5298;
+
+.hit-shot, .hit-shot:hover {
+    background-color: red;
+}
+
+.missed-shot, .missed-shot:hover {
+    background-color: #56CCF2;
 }

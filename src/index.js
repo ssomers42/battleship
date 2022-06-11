@@ -1,10 +1,7 @@
-import { Gameboard } from './factories/Gameboard.js';
+import Gameboard from './factories/Gameboard.js';
 
-let playerOneGameboard = Gameboard('1');
+const playerGameboard = Gameboard('player');
 
-let playerTwoGameboard = Gameboard('2');
+const computerGameboard = Gameboard('computer');
 
-console.log('hello');
-
-export { playerOneGameboard, playerTwoGameboard };
-
+export { playerGameboard, computerGameboard };

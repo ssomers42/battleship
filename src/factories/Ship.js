@@ -1,23 +1,24 @@
-import { renderShip } from '../renderApp.js';
+import renderApp from '../renderApp.js';
 
-const Ship = (length, locationArr) => {
+const Ship = (locationArr, player) => {
   let hitArr = [];
+  let isSunk = false;
+  const boatLength = locationArr.length;
 
   const hit = (index) => {
     hitArr.push(index);
-    const isSunk = checkIfSunk();
-    return isSunk;
   };
 
   const checkIfSunk = () => {
+    console.log(hitArr);
     let hitCount = 0;
-    hitArr.forEach((ele) => hitCount++);
-    return hitCount === length ? true : false;
+    hitArr.forEach(() => hitCount++);
+    return hitCount === boatLength ? (isSunk = true) : false;
   };
 
-  renderShip(length, locationArr);
+  if (player == 'player') renderApp().renderShip(locationArr, player);
 
-  return { hit, length };
+  return { locationArr, hit, checkIfSunk };
 };
 
 export default Ship;
