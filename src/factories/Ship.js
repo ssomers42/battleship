@@ -10,13 +10,12 @@ const Ship = (locationArr, player) => {
   };
 
   const checkIfSunk = () => {
-    console.log(hitArr);
     let hitCount = 0;
     hitArr.forEach(() => hitCount++);
     return hitCount === boatLength ? (isSunk = true) : false;
   };
 
-  if (player == 'player') renderApp().renderShip(locationArr, player);
+  if (player == 'player') renderApp().renderShip(locationArr);
 
   return { locationArr, hit, checkIfSunk };
 };

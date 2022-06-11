@@ -13,6 +13,12 @@ const Gameboard = (player) => {
     ['Patrol boat']: Ship([56, 57], player),
   };
 
+  //bind event handlers to grid
+  //
+  const placeShips = () => {
+
+  }
+
   const receiveAttack = (index, tile) => {
     //check all ship locations for hit
     for (const ship in Ships) {

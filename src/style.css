@@ -1,20 +1,27 @@
+.game-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content:space-between;
+    max-height: 100vh;
+    padding: 60px 72px;
+}
+
 .gameboard {
+    display: flex;
+    flex-direction: column;
 }
 
 .game-tiles {
+    aspect-ratio: 1;
     display: grid;
-    grid-template-columns: repeat(14, 40px);
-    grid-gap:-1px
-}
-
-.game-tile {
-    height: 40px;
-    width: 40px;
-    margin-left:-1px;
+    grid-template-columns: repeat(14, minmax(24px, 40px));
+    grid-template-rows: repeat(14, minmax(24px, 40px));
 }
 
 .game-tile {
     border: 1px solid black;
+    /* aspect-ratio: 1; */
 }
 
 .computer-tile:hover {

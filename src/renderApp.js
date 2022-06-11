@@ -1,16 +1,33 @@
-import { computerGameboard, playerGameboard } from './index.js';
+import { computerGameboard } from './index.js';
 import sendAttack from './computerLogic.js';
 
 const renderApp = () => {
+  const clearGameboards = () => {
+    const playerContainer = document.querySelector(
+      `#player-gameboard .game-tiles`
+    );
+    const computerContainer = document.querySelector(
+      `#player-gameboard .game-tiles`
+    );
+    while (playerContainer.firstChild)
+      playerContainer.removeChild(playerContainer.firstChild);
+    renderGameboard('player');
+    while (computerContainer.firstChild)
+      computerContainer.removeChild(computerContainer.firstChild);
+    renderGameboard('computer');
+  };
+
+  //create both grids
   const renderGameboard = (player) => {
-    let container;
-    if (player === 'player') {
-      container = document.querySelector(`#player-gameboard .game-tiles`);
-    } else
-      container = document.querySelector(`#computer-gameboard .game-tiles`);
+    const container = document.querySelector(
+      `#${player}-gameboard .game-tiles`
+    );
     for (let i = 0; i < 196; i++) {
       const tile = document.createElement('div');
       tile.classList.add('game-tile');
+      container.append(tile);
+
+      //create computer grid and bind click handler
       if (player === 'computer') {
         tile.classList.add('computer-tile');
         tile.addEventListener('click', function handleClick() {
@@ -19,22 +36,17 @@ const renderApp = () => {
           setTimeout(() => sendAttack(), 350);
         });
       }
-      container.append(tile);
     }
   };
 
-  const renderShip = (locationArr, player) => {
-    let container;
-    if (player === 'player') {
-      container = document.querySelector(`#player-gameboard .game-tiles`);
-    } else
-      container = document.querySelector(`#computer-gameboard .game-tiles`);
+  //add ships to grid for player
+  const renderShip = (locationArr) => {
+    let container = document.querySelector(`#player-gameboard .game-tiles`);
     locationArr.forEach((index) => {
       container.childNodes[index].classList.add('ship-tile');
     });
   };
-
-  return { renderGameboard, renderShip };
+  return { renderGameboard, renderShip, clearGameboards };
 };
 
 export default renderApp;
